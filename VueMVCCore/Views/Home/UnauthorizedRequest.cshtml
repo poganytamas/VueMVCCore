@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Unauthorized";
+}
+
+<style type="text/css">
+    body {
+        background-color: #1c1c1c;
+        margin: 8px;
+    }
+
+    h1, p {
+        margin: 16px;
+    }
+
+    h1 {
+        color: #00c0fe;
+    }
+
+    p, a {
+        color: #aec8b3;
+    }
+</style>
+
+
+<h1>Unauthorized</h1>
+<p>Your account (@(string.IsNullOrEmpty(User.Identity.Name) ? "anonymous user" : User.Identity.Name)) is not authorized to access this page.</p>
+

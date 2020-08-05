@@ -1,0 +1,26 @@
+﻿@model Exception
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+@if (Model != null)
+{
+    <div>
+        <h3>Error that happened (for developers): </h3>
+        <p>
+            @Html.ValueFor(model => model.Message)
+        </p>
+    </div>
+}
+@if (Model != null && Model.InnerException != null)
+{
+    <div>
+        <h3>Inner error that happened (for developers): </h3>
+        <p>
+            @Html.ValueFor(model => model.InnerException!.Message)
+        </p>
+    </div>
+}
